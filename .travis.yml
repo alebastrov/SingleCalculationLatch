@@ -1,0 +1,10 @@
+language: java
+sudo: false
+jdk:
+  - openjdk8
+install:
+ cd cache
+script:
+  # To get rid of  the "Downloading/Downloaded" lines we use:
+  # --batch-mode  -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+  mvn clean install --batch-mode  -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
